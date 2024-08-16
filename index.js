@@ -66,6 +66,8 @@ const getDogPic2 = async () => {
   return '2: Ready';
 };
 getDogPic2();
+//////
+
 (async () => {
   try {
     console.log('1 : Will get dog pic');
