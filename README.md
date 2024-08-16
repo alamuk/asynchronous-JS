@@ -58,3 +58,10 @@ means - async and await make the promises more looks as a sync and beautiful
 ``` 
 immediately invoked function expression
 ```
+
+###  multiple promises together   
+```javascript
+const all = await Promise.all([resPro1, resPro2, resPro3]);
+console.log(all);
+const imgs = all.map(ell=> {ell.body.message})
+ ``` 

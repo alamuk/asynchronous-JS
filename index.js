@@ -38,6 +38,34 @@ const getDogPic = async () => {
   return '2: Ready';
 };
 
+//// calling multiple promise together.//////
+const getDogPic2 = async () => {
+  try {
+    const data = await readFilePro(`${__dirname}/dog.txt`);
+    console.log(`ReadData: ${data}`);
+
+    const resPro1 = await superagent.get(
+      `https://dog.ceo/api/breed/${data}/images/random`,
+    );
+    const resPro2 = await superagent.get(
+      `https://dog.ceo/api/breed/${data}/images/random`,
+    );
+    const resPro3 = await superagent.get(
+      `https://dog.ceo/api/breed/${data}/images/random`,
+    );
+    const all = await Promise.all([resPro1, resPro2, resPro3]);
+    const images = all.map((ell) => ell.body.message);
+    console.log(images);
+
+    await writeFilePro('dog-async.txt', images.join('\n'));
+    console.log('Random dog image to save to the file');
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+  return '2: Ready';
+};
+getDogPic2();
 (async () => {
   try {
     console.log('1 : Will get dog pic');
