@@ -51,3 +51,10 @@ The await keyword is used in JS to pause the execution of an async function unti
 
 ### syntactic sugar for promises 
 means - async and await make the promises more looks as a sync and beautiful 
+
+
+### (() => {})(); iife // no name function 
+### (async () => {})(); // async function without name 
+``` 
+immediately invoked function expression
+```
