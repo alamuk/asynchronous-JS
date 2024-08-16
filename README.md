@@ -34,3 +34,20 @@ relsolve = successfull case = then () method handle
 rejection = unsuccessfull case = catch() method handle 
 
 ```
+##ES 8
+### Async function 
+```
+async functions always return a Promise. = means it has resolve and reject fuction automatically and wait for future value.  
+The Promise resolves with the value returned by the function.
+If an error is thrown, the Promise is rejected with the thrown error.
+
+```
+### Await 
+```
+The await keyword is used in JS to pause the execution of an async function until a Promise is resolved or rejected.
+* wait until a Promise is resolved or rejected.
+* the async function pauses execution until the Promise is resolved or rejected. 
+```
+
+### syntactic sugar for promises 
+means - async and await make the promises more looks as a sync and beautiful 
